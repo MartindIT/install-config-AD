@@ -50,7 +50,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 **4.) From here we will now log into Domain controllers VM and change Firewall Permissions to allow ICMP Traffic.**
 
 **So first you go to windows defender firewall and click inbound rules and click protocol and go to ICMPv4 and Enabled both echo request.
-Then when you check back into Client VM you can see replys from Domain controller VM now.**
+Then when you check back into Client VM you can see replys from Domain controller VM now which tells you that there can be connectivity between the Client VM and Domain Controller.**
 
 
 
