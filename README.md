@@ -30,7 +30,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 ![image](https://github.com/MartindIT/install-config-AD/assets/151476834/8db8c1b8-af46-481a-b2ee-3ca4ca1ea795)
 
 
-**1.) First we will create two Virtual Machines in Azure one will be a Domain controller running windows server 2022 and the other a VM running Windows 10 (*make sure to check that they are in the same VNET*)**
+**1.) First we will create two Virtual Machines in Azure one will be a Domain controller VM running windows server 2022 and the other a VM running Windows 10 (*make sure to check that they are in the same VNET*)**
 
 ![image](https://github.com/MartindIT/install-config-AD/assets/151476834/84324e9f-7c42-4b9e-9113-e2bd72e9d397)
 ![image](https://github.com/MartindIT/install-config-AD/assets/151476834/7e30d960-12b1-409a-9513-5738a15d5746)
@@ -40,7 +40,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 ![image](https://github.com/MartindIT/install-config-AD/assets/151476834/63d30a66-4f7c-4bf1-a7dd-b8ca3c1adf33)
 ![image](https://github.com/MartindIT/install-config-AD/assets/151476834/fd3d4d6d-3ca7-47d5-97a2-c5c96618933f)
 
-**3.) Ensure Connectivity between the client VM and Domain Controller by logging in to Client VM and perpetual ping Domain Controllers Private IP which is 10.0.0.4 for me and as you can see it the request times out which shows that the firewall is working inside the domain controller.**
+**3.) Ensure Connectivity between the client VM and Domain Controller VM by logging in to Client VM and perpetual ping Domain Controllers Private IP which is 10.0.0.4 for me and as you can see it the request times out which shows that the firewall is working inside the domain controllers VM.**
 
 ![image](https://github.com/MartindIT/install-config-AD/assets/151476834/1161e8fa-ad87-42f7-9a16-f8b4770c5f4f)
 ![image](https://github.com/MartindIT/install-config-AD/assets/151476834/3238bcbf-7d56-4a48-87f4-6afd590eb7a9)
@@ -50,10 +50,20 @@ This tutorial outlines the implementation of on-premises Active Directory within
 **4.) From here we will now log into Domain controllers VM and change Firewall Permissions to allow ICMP Traffic.**
 
 **So first you go to windows defender firewall and click inbound rules and click protocol and go to ICMPv4 and Enabled both echo request.
-Then when you check back into Client VM you can see replys from Domain controller VM now which tells you that there can be connectivity between the Client VM and Domain Controller.**
+Then when you check back into Client VM you can see replys from Domain controller VM now which tells you that there can be connectivity between the Client VM and Domain Controller VM.**
 
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/225de0ff-a4e9-4787-aa99-cb8831684e2c)
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/e74fcf5a-4802-45e6-8079-8a8b848c1587)
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/164e95fe-6962-4ba1-83b4-159f0c291b4f)
 
+**5.) Now go back to Domain controller VM and go to server manager and click (add roles and features) and check Active Directory Domain Services and Install. After Installation you will see this pop up and click on *"Promote this server to a Domain Controller"*** 
 
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/75b3b2e6-8643-42fc-8d37-36df7efaf473)
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/6bbcb7d4-53f6-418a-9354-3354b7e40703)
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/5ae8fa5c-65a5-4735-97fe-37894babacfc)
+
+**6.) Furthermore, we will add a new forest and make the root domain name in this case I chose mydomain.com then after that we will create a password.
+Then once you are ready hit install and the VM will restart and you will have to log in as a *fully qualified domain name* so in this case for me it will be "mydomain.com\labuser" this is because we turned our server into a domain controller.**
 
 
 
