@@ -114,32 +114,16 @@ Then once you are ready hit install and the VM will restart and you will have to
 
 ![image](https://github.com/MartindIT/install-config-AD/assets/151476834/95e72b15-51ad-412d-8a08-0c12d5ec6ede)
 
-**5.) From here I can log out of Client-1 VM and proceed to log back in as a random user which I Chose "bav.puf"
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/1855d47d-6a3d-4afa-a960-4a9d09250bcf)
+
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/ee846b33-ed66-473a-ada1-c1f4f501b586)
+
+**15.) From here I can log out of Client-1 VM and proceed to log back in as a random user which I Chose "bav.puf" and by checking the users folder I can see how many users have logged into Client-1 VM.**
 
 
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/eb4fcb5e-7e33-49a7-9d67-85bed06af373)
 
-
-
-
-which will allow us to change the other VM's DNS Server manually into the Domain controller as its DNS Server.
-
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-
-
-
-
-
-
-
-
-
+**16.) Finally we will be done with the Active Directory Project and other extra bonuses is that you can reset passwords on each account if you want and disable and unlock accounts but other than that this Lab just showed how an environment in active directory would feel as a Help Desk Tech and gave me practice with Active Directory.**
 
 
 
