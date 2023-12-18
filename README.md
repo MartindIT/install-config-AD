@@ -32,6 +32,26 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 **1.) First we will create two Virtual Machines in Azure one will be a Domain controller running windows server 2022 and the other a VM running Windows 10 (*make sure to check that they are in the same VNET*)**
 
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/84324e9f-7c42-4b9e-9113-e2bd72e9d397)
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/7e30d960-12b1-409a-9513-5738a15d5746)
+**2.) Go to Domain Controller VM and click on Networking and click on Network Interface then after that go to IP config and change the IP address to *Stactic* so it never changes and hit save.**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 which will allow us to change the other VM's DNS Server manually into the Domain controller as its DNS Server.
 
 
