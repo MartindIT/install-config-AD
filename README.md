@@ -78,7 +78,43 @@ Then once you are ready hit install and the VM will restart and you will have to
 **8.) From here we will create a new user in the "_ADMINS" Org unit named "Jane Doe" and create a password for this account then we will make them apart of the domain admins group by right clicking jane and properties, from there we will click "member of" and click "add" which will bring up a box and type "Domain" and click "check names" from there click domain admins and apply. Once Jane has become an admin we can log off Domain Contoller and use Jane Doe from now on.** 
 
 
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/1a179523-004a-4d7b-93e4-767621486f74)
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/88431288-7b66-42f0-8b74-b39f1866a743)
 
+**9.) At this time we can now log back in as Jane Doe in the Domain Contorllers VM and by typing in command prompt we can see we are logged in as Jane Doe**
+
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/967416cf-97aa-4885-ab6d-47835c73101c)
+
+**10.) Finally we can go back to our Client VM which has been sitting around and go ahead and go to "System" and "Rename this PC Advanced" and click "change" then type "mydomain.com" into the box and click "ok" and as you can tell it says that mydomain.com can not be contacted which just means it reached out to public DNS Server and not private, From here we will have to change are DNS settings in Azure.**
+
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/fdb20d74-be19-41c8-b71c-70c323784d3b)
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/48b7594f-aaa3-4448-9d69-4ab8a32b45e2)
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/5772ece5-55a7-4cd9-8f58-7fbc06a36bf7)
+
+**11.) We will return back to Azure and go to virtual machines to change Client-1's DNS server settings to allow custom dns server from Domain Controller's Private IP Address, Then restart the Client VM to ensure our settings will be changed over and log back in with labuser.**
+
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/6d38bdda-d521-4147-ab27-aae097c9b0a1)
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/38785941-d00c-4a73-8fe2-02c92c92a97d)
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/7b8fd1e5-d324-4c52-86c3-a04ebac1f1fc)
+
+**12.) Once we log back into Client VM we can check our DNS server by command promt and ipconfig /all and it shows what are DNS server is now. Then go to "system settings" and go to "Rename this pc Advanced" and click "change" where you will type "Mydomain.com" and log in as "Jane_admin" then the Client VM wil restart and now since Client VM is a memeber of the domain, we can now log into Jane Doe's account on the Client VM.**
+
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/8fe669ce-607e-4a82-9c07-33eff76992e4)
+
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/672703c9-6077-44b0-8ff0-417b901c3eb2)
+
+**13.) Further more just go to settings and go to remote desktop and click "select users who can remotley access this pc" and type "Domain Users" which just allows everyone have access to log into the Client VM, To ensure that this was done you can go back to Domain controller VM and go to Active Directory users and computers and find the users folder in MyDomian.com folder to see all members apart of Domain Users which we'll soon add more.**
+
+
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/e30600ac-366e-4349-9656-50e375e9cab0)
+
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/626382c0-2440-4b2b-9e08-54dc5f7a2d9f)
+
+**14.) Next we will go to Power Shell ISE in the Domain Controller VM as administrator and paste the context of the script into powershell and create a bunch of accounts with random names and to ensure that these are getting transfered to our "EMPLOYEES" org unit we will go into active directory users and computers to watch this unfold. *This script gives everyone the same password so all I have to do now is pick a random one to log in as through Client-1 VM***
+
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/95e72b15-51ad-412d-8a08-0c12d5ec6ede)
+
+**5.) From here I can log out of Client-1 VM and proceed to log back in as a random user which I Chose "bav.puf"
 
 
 
