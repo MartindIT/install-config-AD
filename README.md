@@ -65,6 +65,17 @@ Then when you check back into Client VM you can see replys from Domain controlle
 **6.) Furthermore, we will add a new forest and make the root domain name in this case I chose mydomain.com then after that we will create a password.
 Then once you are ready hit install and the VM will restart and you will have to log in as a *fully qualified domain name* so in this case for me it will be "mydomain.com\labuser" this is because we turned our server into a domain controller.**
 
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/d36a5a47-0a89-4b9b-8044-f866294739f6)
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/d5f05c37-19f0-4ac4-9a1f-d3c9b7a6f60d)
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/364defaa-2a02-40ae-9ac9-92705d4917a6)
+
+**7.) Now once your in go to tools and click Active Directory Users and Computers and create a new Organizational Unit called “_EMPLOYEES” and "_ADMINS"**
+
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/ce4c208c-5f01-4b12-b671-e1d922b10b88)
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/5482add3-4bb7-405a-969b-c3e762b35a39)
+![image](https://github.com/MartindIT/install-config-AD/assets/151476834/f10e7fb3-437a-482f-9d93-973e02f95e79)
+
+**8.) From here we will create a new user in the "_ADMINS" Org unit named "Jane Doe" and create a password for this account then we will make them apart of the domain admins group by right clicking jane and properties, from there we will click "member of" and click "add" which will bring up a box and type "Domain" and click "check names" from there click domain admins and apply. Once Jane has become an admin we can log off Domain Contoller and use Jane Doe from now on.** 
 
 
 
